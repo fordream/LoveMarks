@@ -40,7 +40,7 @@ AppPackages
 .vs/
 
 # Ignore files build by ndk and eclipse
-libs/
+libs/armeabi/
 bin/
 obj/
 gen/
