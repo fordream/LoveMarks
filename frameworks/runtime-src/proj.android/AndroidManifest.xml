@@ -60,39 +60,41 @@
     yourPackageName.permission.SINA_PUSH"
     -->
     <service
-    android:name="com.sina.push.service.SinaPushService"
-    android:label="PushDataCenter"
-    android:permission="com.wmb.lovemarks.permission.SINA_PUSH"
-    android:process=":remote" >
-    <intent-filter>
-    <!--
-    SinaPushSDK service action 命名规则
-    sina.push.action.service.APPID
-    注意必须为: sina.push.action.service. + APPID
-    -->
-    <action android:name="sina.push.action.service.23786" />
-    <category android:name="android.category.DEFAULT" />
-    </intent-filter>
+        android:name="com.sina.push.service.SinaPushService"
+        android:label="PushDataCenter"
+        android:permission="com.wmb.lovemarks.permission.SINA_PUSH"
+        android:process=":remote" >
+        <intent-filter>
+            <!--
+            SinaPushSDK service action 命名规则
+            sina.push.action.service.APPID
+            注意必须为: sina.push.action.service. + APPID
+            -->
+            <action android:name="sina.push.action.service.23786" />
+            <category android:name="android.category.DEFAULT" />
+        </intent-filter>
     </service>
     <!--
     声明使用 SinaPushSDK 必须注册的广播事件
     -->
     <receiver android:name="com.sina.push.receiver.PushSDKReceiver" >
-    <intent-filter>
-    <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-    <action android:name="android.intent.action.BOOT_COMPLETED" />
-    </intent-filter>
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
     </receiver>
     <!--
     声明使用 SinaPushSDK 接收透传消息的广播事件
     -->
     <receiver android:name=".SDKMsgReceiver" >
-    <intent-filter>
-    <action android:name="com.sina.push.msg.broadcast.23786" /></intent-filter>
+        <intent-filter>
+            <action android:name="com.sina.push.msg.broadcast.23786" />
+        </intent-filter>
     </receiver>
-    <provider android:name="com.sina.push.datacenter.PushProvider"
-    android:process=":remote"
-    android:multiprocess="false"
-    android:authorities="com.sina.push.pushprovider.23786"/>
+    <provider
+        android:name="com.sina.push.datacenter.PushProvider"
+        android:process=":remote"
+        android:multiprocess="false"
+        android:authorities="com.sina.push.pushprovider.23786"/>
     <meta-data android:name="sinapush_appid" android:value="23786" />    
 </manifest> 

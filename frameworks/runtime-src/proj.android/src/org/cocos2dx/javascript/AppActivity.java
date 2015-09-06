@@ -42,6 +42,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import com.sina.push.utils.LogUtil;
 
 import com.sina.push.PushManager;
 
@@ -62,6 +63,8 @@ public class AppActivity extends Cocos2dxActivity implements OnClickListener {
         Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
         // TestCpp should create stencil buffer
         glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
+
+        showDialog(1111);
 
         //
   //       super.onCreate(savedInstanceState);
@@ -176,4 +179,9 @@ public class AppActivity extends Cocos2dxActivity implements OnClickListener {
 		manager.refreshConnection();
 
 	}
+
+	// @Override
+	// public Dialog onCreateDialog(int handle) {
+	// 	LogUtil.debug("Haha");
+	// }
 }

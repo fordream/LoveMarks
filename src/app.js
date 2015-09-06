@@ -9,8 +9,8 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(mainScene.node);
 
         var layer = this.layer = new cc.LayerGradient(cc.color(255,0,0,255), cc.color(0,255,255,255),cc.p(1,0));
-        // mainScene.node.addChild(layer);
-        // this.scheduleUpdate();
+        mainScene.node.addChild(layer);
+        this.scheduleUpdate();
         cc.log(Math.cos(60/180 * Math.PI));
         for(var k in mainScene.node) {
             cc.log(k, mainScene.node[k]);
